@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hive</title>
+  <link rel="stylesheet" href="Hive.css" />
+
+  <!-- Firebase SDKs (Compat version) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Hive – Track your creative progress</h1>
+    <nav>
+      <button data-section="home" class="nav-btn active">Home</button>
+      <button data-section="list" class="nav-btn">My List</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="page active">
+      <h2>Today's recommendation</h2>
+      <div class="card-container" id="recommendation"></div>
+    </section>
+
+    <!-- List Section -->
+    <section id="list" class="page">
+      <h2>Your Progress</h2>
+      <form id="entryForm">
+        <input type="text" id="title" placeholder="Title" required />
+        <select id="type">
+          <option>Light novel</option>
+          <option>Manga</option>
+          <option>Anime</option>
+        </select>
+        <input type="text" id="progress" placeholder="Progress (e.g. Chapter 10)" required />
+        <button type="submit">Add</button>
+      </form>
+      <div id="progressList" class="progress-wrapper"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MFZA</p>
+  </footer>
+
+  <script src="Hive.js"></script>
+</body>
+</html>
